@@ -90,6 +90,14 @@ const onCreateBut = () => {
   }
 };
 
+const onUpNull = (variable) => {
+  if (variable == null) {
+    return "";
+  } else {
+    return variable;
+  }
+};
+
 const onUpdate = async (
   key,
   idCompuesto,
@@ -107,6 +115,11 @@ const onUpdate = async (
   //history.push("/editUsuario");
   // const grupos = await groups(rol, id_grupo, grupo);
   //console.log(grupos, "AAAAAAAAAAAAAAAAAAAAAA");
+  nombreCompuesto = onUpNull(nombreCompuesto);
+  descripcion = onUpNull(descripcion);
+  formula = onUpNull(formula);
+  tipo = onUpNull(tipo);
+  estructura = onUpNull(estructura);
   Swal.fire({
     title: "Editar",
     html: `<label for='EnombreCompuesto'>Nombre:</label><br>
@@ -139,13 +152,7 @@ const onUpdate = async (
       //alert(Egrupo);
       //const Eprofe = Swal.getPopup().querySelector("#Eprofe").checked;
       //const Eadmin = Swal.getPopup().querySelector("#Eadmin").checked;
-      if (
-        !EnombreCompuesto ||
-        !Edescripcion ||
-        !Eformula ||
-        !Etipo ||
-        !Eestructura
-      ) {
+      if (!EnombreCompuesto || !Eformula) {
         Swal.showValidationMessage(`Algún campo obligatorio vacío`);
       }
       return {
