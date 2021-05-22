@@ -202,16 +202,16 @@ const onCreate = async () => {
 
   Swal.fire({
     title: "Crear usuario",
-    html: `<label for='EnombreUsuario'>Nombre inicio sesión:</label>
-    <input class="swal2-input" id='EnombreUsuario' type='text' placeholder="Nombre usuario">
-    <label for='Epassword'>Password:</label>
-    <input class="swal2-input" id='Epassword' type='password' placeholder="Contraseña">
-    <label for='Enombre'>Nombre:</label>
-    <input class="swal2-input" id='Enombre' type='text' placeholder="Nombre">
-    <label for='Eapellidos'>Apellidos:</label>
-    <input class="swal2-input" id='Eapellidos' type='text' placeholder="Apellidos">
-    <label for='Eemail'>Email:</label>
-    <input class="swal2-input" id='Eemail' type='email' placeholder="Email">
+    html: `<label for='EnombreUsuario'>Nombre inicio sesión:</label><br>
+    <input class="swal2-input" id='EnombreUsuario' type='text' placeholder="Nombre usuario"><br>
+    <label for='Epassword'>Password:</label><br>
+    <input class="swal2-input" id='Epassword' type='password' placeholder="Contraseña"><br>
+    <label for='Enombre'>Nombre:</label><br>
+    <input class="swal2-input" id='Enombre' type='text' placeholder="Nombre"><br>
+    <label for='Eapellidos'>Apellidos:</label><br>
+    <input class="swal2-input" id='Eapellidos' type='text' placeholder="Apellidos"><br>
+    <label for='Eemail'>Email:</label><br>
+    <input class="swal2-input" id='Eemail' type='email' placeholder="Email"><br>
     <label for="Etipo">Tipo usuario:</label><br>
     <select class="swal2-input" id="Etipo">
     ${tipo}
