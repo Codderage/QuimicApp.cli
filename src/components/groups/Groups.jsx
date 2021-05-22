@@ -250,14 +250,13 @@ const Grupos = () => {
       if (usuarioLogeado.id_profesor) {
         return (
           <div className="justify-content-center row">
-            <button
-              className="btn btn-primary "
+            <CreateButton
               onClick={(e) => {
                 onCreate();
               }}
             >
               Crear Grupo
-            </button>
+            </CreateButton>
           </div>
         );
       } else {
@@ -460,7 +459,7 @@ const Grupos = () => {
     <>
       {onCreateBut()}
       <TableWrapper>
-        <CreateButton>+ Crear grupo</CreateButton>
+        {/* <CreateButton>+ Crear grupo</CreateButton> */}
         <Table
           {...state}
           pagination={{ position: [state.top, state.bottom] }}

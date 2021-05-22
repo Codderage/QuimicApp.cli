@@ -2277,10 +2277,10 @@ button.alt:hover,
   background-size: auto, cover;
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
-  padding: 14em 0 14em 0;
+  padding: 8em 0 8em 0;
   text-align: center;
   color: #fff;
-  min-height: calc(100vh - 64px) !important;
+  min-height: calc(100vh - 80px) !important;
 }
 
 #header header h1 {
