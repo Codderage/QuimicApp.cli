@@ -79,9 +79,9 @@ const onCreateBut = () => {
       return (
         <CreateButton
           className="btn"
-          onClick={(e) => {
-            onCreate();
-          }}
+          // onClick={(e) => {
+          //   onCreate();
+          // }}
         >
           + Crear Componente
         </CreateButton>
