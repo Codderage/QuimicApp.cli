@@ -2277,7 +2277,7 @@ button.alt:hover,
   background-size: auto, cover;
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
-  padding: 8em 0 8em 0;
+  padding: 6em 0 6em 0;
   text-align: center;
   color: #fff;
   min-height: calc(100vh - 80px) !important;

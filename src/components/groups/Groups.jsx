@@ -249,17 +249,15 @@ const Grupos = () => {
     if (usuarioLogeado) {
       if (usuarioLogeado.id_profesor) {
         return (
-          <div className="justify-content-center row">
-            <CreateButton
-              onClick={(e) => {
-                onCreate();
-              }}
-            >
-              Crear Grupo
-            </CreateButton>
-          </div>
+          <CreateButton
+            className="btn"
+            onClick={(e) => {
+              onCreate();
+            }}
+          >
+            + Crear Grupo
+          </CreateButton>
         );
-      } else {
       }
     }
   };

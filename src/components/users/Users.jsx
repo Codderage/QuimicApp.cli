@@ -105,7 +105,7 @@ const onCreateBut = () => {
     if (usuarioLogeado.id_profesor) {
       return (
         <CreateButton
-          className="btn "
+          className="btn"
           onClick={(e) => {
             onCreate();
           }}
