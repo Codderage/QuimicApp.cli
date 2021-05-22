@@ -16,6 +16,7 @@ const SideNavBar = () => {
 
   const logout = async () => {
     try {
+      sessionStorage.clear();
       await axios.post("auth/logout");
       swal({
         title: "Esperamos volver a verte",
@@ -26,7 +27,7 @@ const SideNavBar = () => {
       });
       setUser(null);
       setToken(null);
-      sessionStorage.clear();
+      //sessionStorage.clear();
       // history.push("/login");
       setTimeout(() => {
         window.location.href = "/login";

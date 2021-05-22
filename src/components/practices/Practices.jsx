@@ -8,23 +8,18 @@ import { CreateButton, TableWrapper } from "./Practices.styled";
 
 const columns = [
   {
-    title: "Id",
-    dataIndex: "id",
-    // sorter: (a, b) => a.id - b.id,
-  },
-  {
-    title: "Nº muestra",
-    dataIndex: "muestra",
-    // sorter: (a, b) => a.profesor - b.profesor,
-  },
-  {
     title: "Profesor",
     dataIndex: "profesor",
     // sorter: (a, b) => a.profesor - b.profesor,
   },
   {
-    title: "Grupo",
-    dataIndex: "grupo",
+    title: "Compuesto en muestra",
+    dataIndex: "compuestoEnMuestra",
+    // sorter: (a, b) => a.profesor - b.profesor,
+  },
+  {
+    title: "Enunciado",
+    dataIndex: "enunciado",
     // sorter: (a, b) => a.grupo - b.grupo,
   },
   {
@@ -61,9 +56,9 @@ for (let i = 1; i <= 10; i++) {
   data.push({
     key: i,
     id: i,
-    muestra: i + 1245 - i * 10,
+    enunciado: "HOLAAAA Enunciadoooooo",
     profesor: "John Brown",
-    grupo: `DAW`,
+    compuestoEnMuestra: `DAW`,
     fechaInicio: "01/01/1111",
     fechaFin: `01/01/1111`,
   });
