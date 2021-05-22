@@ -119,13 +119,7 @@ const SideNavBar = () => {
               <FontAwesomeIcon icon={faTimes} onClick={showSidebar} />
             </Link>
           </NavToggle>
-          {SideNavData.map((item, index) => {
-            return (
-              <li key={index} className={item.cName} title={item.title}>
-                <Link to={item.path}>{item.icon}</Link>
-              </li>
-            );
-          })}
+          <li>{verifyUser}</li>
         </Ul>
       </NavMenu>
     </>
