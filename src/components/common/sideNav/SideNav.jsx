@@ -40,12 +40,14 @@ const SideNavBar = () => {
         timer: "3000",
       });
       // sessionStorage.clear();
-      // history.push("/");
+      // setTimeout(() => {
+      //   window.location.href = "/login";
+      // }, 1800);
     }
   };
 
   const logged = user ? (
-    <span>
+    <span className="navSpan">
       Welcome {user.username} |{" "}
       <Link onClick={logout} className="logged">
         Logout

@@ -71,6 +71,25 @@ const columns = [
   },
 ];
 
+const onCreateBut = () => {
+  const usuarioLogeado = JSON.parse(sessionStorage.getItem("user"));
+
+  if (usuarioLogeado) {
+    if (usuarioLogeado.id_profesor) {
+      return (
+        <CreateButton
+          className="btn"
+          onClick={(e) => {
+            onCreate();
+          }}
+        >
+          + Crear Componente
+        </CreateButton>
+      );
+    }
+  }
+};
+
 const onUpdate = async (
   key,
   idCompuesto,
@@ -309,17 +328,20 @@ const Components = () => {
   }
 
   return (
-    <TableWrapper>
-      <CreateButton>+ Crear componente</CreateButton>
-      <Table
-        {...state}
-        pagination={{ position: [state.top, state.bottom] }}
-        columns={tableColumns}
-        dataSource={datos ? datos : null}
-        scroll={scroll}
-        className="components-table"
-      />
-    </TableWrapper>
+    <>
+      {onCreateBut()}
+      <TableWrapper>
+        {/* <CreateButton>+ Crear componente</CreateButton> */}
+        <Table
+          {...state}
+          pagination={{ position: [state.top, state.bottom] }}
+          columns={tableColumns}
+          dataSource={datos ? datos : null}
+          scroll={scroll}
+          className="components-table"
+        />
+      </TableWrapper>
+    </>
   );
 };
 

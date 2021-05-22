@@ -10,45 +10,45 @@ const columns = [
   {
     title: "Id",
     dataIndex: "id",
-    sorter: (a, b) => a.id - b.id,
+    // sorter: (a, b) => a.id - b.id,
   },
   {
     title: "Nº muestra",
     dataIndex: "muestra",
-    sorter: (a, b) => a.profesor - b.profesor,
+    // sorter: (a, b) => a.profesor - b.profesor,
   },
   {
     title: "Profesor",
     dataIndex: "profesor",
-    sorter: (a, b) => a.profesor - b.profesor,
+    // sorter: (a, b) => a.profesor - b.profesor,
   },
   {
     title: "Grupo",
     dataIndex: "grupo",
-    sorter: (a, b) => a.grupo - b.grupo,
+    // sorter: (a, b) => a.grupo - b.grupo,
   },
   {
     title: "Fecha inicio",
     dataIndex: "fechaInicio",
-    sorter: (a, b) => a.fechaInicio - b.fechaInicio,
+    // sorter: (a, b) => a.fechaInicio - b.fechaInicio,
   },
   {
     title: "Fecha fin",
     dataIndex: "fechaFin",
-    sorter: (a, b) => a.fechaFin - b.fechaFin,
+    // sorter: (a, b) => a.fechaFin - b.fechaFin,
   },
   {
     title: "",
     key: "accion",
     render: () => (
       <Space size="middle">
-        <a href="http://localhost:3000/practicas/practica" title="Ver">
+        <a title="Ver">
           <FontAwesomeIcon icon={faEye} className="view-icon" />
         </a>
-        <a href="http://localhost:3000/practicas/practica" title="Editar">
+        <a title="Editar">
           <FontAwesomeIcon icon={faEdit} className="view-icon" />
         </a>
-        <a href="http://localhost:3000/practicas/practica" title="Eliminar">
+        <a title="Eliminar">
           <FontAwesomeIcon icon={faTimes} className="delete-icon" />
         </a>
       </Space>

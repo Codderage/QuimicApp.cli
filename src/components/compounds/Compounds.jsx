@@ -10,25 +10,25 @@ const columns = [
   {
     title: "Id",
     dataIndex: "id",
-    sorter: (a, b) => a.id - b.id,
+    // sorter: (a, b) => a.id - b.id,
   },
   {
     title: "Nombre",
     dataIndex: "nombre",
-    sorter: (a, b) => a.nombre - b.nombre,
+    // sorter: (a, b) => a.nombre - b.nombre,
   },
   {
     title: "",
     key: "accion",
     render: () => (
       <Space size="middle">
-        <a href="http://localhost:3000/componentes" title="Ver">
+        <a title="Ver">
           <FontAwesomeIcon icon={faEye} className="view-icon" />
         </a>
-        <a href="http://localhost:3000/componentes" title="Editar">
+        <a title="Editar">
           <FontAwesomeIcon icon={faEdit} className="view-icon" />
         </a>
-        <a href="http://localhost:3000/componentes" title="Eliminar">
+        <a title="Eliminar">
           <FontAwesomeIcon icon={faTimes} className="delete-icon" />
         </a>
       </Space>
