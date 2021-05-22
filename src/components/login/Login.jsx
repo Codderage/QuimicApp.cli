@@ -1,5 +1,4 @@
 import React, { useState, useContext } from "react";
-import ReactDOM, { useHistory } from "react-router-dom";
 import {
   LoginLogo,
   EmailInput,
@@ -9,9 +8,9 @@ import {
   Link,
   Seccion,
 } from "./login.styled";
-
 import swal from "sweetalert";
 import axios from "../common/http/index";
+import { useHistory } from "react-router-dom";
 import { User } from "../../App";
 
 import carga from "../../assets/img/load/ajax-loader.gif";
@@ -58,16 +57,20 @@ const Login = () => {
               timer: "1800",
             });
 
-            localStorage.setItem("token", response.data.access_token);
+            sessionStorage.setItem("token", response.data.access_token);
 
-            localStorage.setItem("user", JSON.stringify(response.data.user));
+            sessionStorage.setItem("user", JSON.stringify(response.data.user));
 
             setUser(response.data.user);
 
             setToken(response.data.access_token);
 
-            //history.push("/");
-            window.location.href = "/";
+            // history.push("/");
+            // window.location.href = "/";
+
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 1800);
           }
           if (response.status == 209) {
             swal({

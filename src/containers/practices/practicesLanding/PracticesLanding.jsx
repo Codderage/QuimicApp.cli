@@ -1,5 +1,3 @@
-import React, { Component } from "react";
-
 import SideNavBar from "../../../components/common/sideNav/SideNav";
 import SearchBar from "../../../components/searchBar/SearchBar";
 import Practices from "../../../components/practices/Practices";
