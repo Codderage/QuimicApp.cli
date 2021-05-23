@@ -12,6 +12,7 @@ import Home from "./containers/home/home";
 import Auth from "./containers/verif/Auth";
 import NoAuth from "./containers/verif/NoAuth";
 import VerAuth from "./containers/verif/VerAuth";
+import PageNotFound from "./containers/error/PageNotFound";
 
 import "./App.css";
 import "antd/dist/antd.css";
@@ -114,6 +115,9 @@ const App = () => {
               </Route>
               <Route path="/componentes" exact>
                 <ComponentsLanding />
+              </Route>
+              <Route>
+                <PageNotFound />
               </Route>
 
               {/* <Route>
