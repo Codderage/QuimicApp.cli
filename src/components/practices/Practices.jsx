@@ -77,11 +77,11 @@ const Practices = () => {
                 key: i,
                 id: response.data[i].id,
                 enunciado: response.data[i].enunciado,
-                profesor: response.data[i].profesor,
+                id_profesor: response.data[i].profesor,
                 compuestoEnMuestra: response.data[i].compuestoEnMuestra,
                 fechaInicio: response.data[i].fechaInicio,
                 fechaFin: response.data[i].fechaFin,
-                grupo: response.data[i].nombre_grupo,
+                profesor: response.data[i].nombre_profesor,
                 // accion: (
                 //   <>
                 //     {response.data[i].nombre}&nbsp;&nbsp;
