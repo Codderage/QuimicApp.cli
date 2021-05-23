@@ -7,8 +7,6 @@ import carga from "../../assets/img/load/ajax-loader.gif";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTimes, faEye } from "@fortawesome/free-solid-svg-icons";
-import { CreateButton, TableWrapper } from "./Groups.styled";
-import { faEye, faEdit, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 import { CreateButton, TableWrapper } from "./Practices.styled";
 
