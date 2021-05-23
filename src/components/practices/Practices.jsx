@@ -55,104 +55,104 @@ const columns = [
   },
 ];
 
-const data = [];
-
-useEffect(async () => {
-  if (sessionStorage.getItem("token") && sessionStorage.getItem("user")) {
-    await axios
-      .get("practicas")
-
-      .then((response) => {
-        //console.log(response.data);
-        if (response.status >= 200 && response.status <= 205) {
-          //console.log(response.data[1].nombre);
-          //console.log(response.data, response.data.length);
-          for (let i = 0; i < response.data.length; i++) {
-            data.push({
-              key: i,
-              id: response.data[i].id,
-              enunciado: response.data[i].enunciado,
-              profesor: response.data[i].profesor,
-              compuestoEnMuestra: response.data[i].compuestoEnMuestra,
-              fechaInicio: response.data[i].fechaInicio,
-              fechaFin: response.data[i].fechaFin,
-              grupo: response.data[i].nombre_grupo,
-              // accion: (
-              //   <>
-              //     {response.data[i].nombre}&nbsp;&nbsp;
-              //     <button
-              //       className="btn btn-primary"
-              //       onClick={(e) => {
-              //         onEdit(response.data[i].id);
-              //       }}
-              //     >
-              //       Editar
-              //     </button>
-              //     &nbsp;&nbsp;
-              //     <button
-              //       className="btn btn-danger"
-              //       onClick={(e) => {
-              //         onDelete(response.data[i].id);
-              //       }}
-              //     >
-              //       Eliminar
-              //     </button>
-              //   </>
-              // ),
-            });
-          }
-          //console.log(array1);
-
-          //history.push("/");
-        }
-      })
-      .catch(function (error) {
-        if (error.status == 401) {
-          swal({
-            title: "Error acceso " + error.response.status,
-            text: "Error, no tienes acceso a esta sección.",
-            icon: "error",
-            button: "Aceptar",
-            timer: "3000",
-          });
-        } else {
-          swal({
-            title: "Error interno " + error.response.status,
-            text: "Error interno, vuelve a intentarlo en unos momentos.",
-            icon: "error",
-            button: "Aceptar",
-            timer: "3000",
-          });
-        }
-      });
-    //if (usuarioLogeado.id_profesor) {
-    //} else {
-    //console.log("ALUMNO");
-    //columns.splice(5);
-    //}
-  }
-  //console.log(array1);
-  //console.log(array1);
-  //setDatos(array);
-}, []);
-// const data = [];
-// for (let i = 1; i <= 10; i++) {
-//   data.push({
-//     key: i,
-//     id: i,
-//     enunciado: "HOLAAAA Enunciadoooooo",
-//     profesor: "John Brown",
-//     compuestoEnMuestra: `DAW`,
-//     fechaInicio: "01/01/1111",
-//     fechaFin: `01/01/1111`,
-//   });
-// }
-
 const showHeader = true;
 
 const pagination = { position: "bottom" };
 
 const Practices = () => {
+  const data = [];
+
+  useEffect(async () => {
+    if (sessionStorage.getItem("token") && sessionStorage.getItem("user")) {
+      await axios
+        .get("practicas")
+
+        .then((response) => {
+          //console.log(response.data);
+          if (response.status >= 200 && response.status <= 205) {
+            //console.log(response.data[1].nombre);
+            //console.log(response.data, response.data.length);
+            for (let i = 0; i < response.data.length; i++) {
+              data.push({
+                key: i,
+                id: response.data[i].id,
+                enunciado: response.data[i].enunciado,
+                profesor: response.data[i].profesor,
+                compuestoEnMuestra: response.data[i].compuestoEnMuestra,
+                fechaInicio: response.data[i].fechaInicio,
+                fechaFin: response.data[i].fechaFin,
+                grupo: response.data[i].nombre_grupo,
+                // accion: (
+                //   <>
+                //     {response.data[i].nombre}&nbsp;&nbsp;
+                //     <button
+                //       className="btn btn-primary"
+                //       onClick={(e) => {
+                //         onEdit(response.data[i].id);
+                //       }}
+                //     >
+                //       Editar
+                //     </button>
+                //     &nbsp;&nbsp;
+                //     <button
+                //       className="btn btn-danger"
+                //       onClick={(e) => {
+                //         onDelete(response.data[i].id);
+                //       }}
+                //     >
+                //       Eliminar
+                //     </button>
+                //   </>
+                // ),
+              });
+            }
+            //console.log(array1);
+
+            //history.push("/");
+          }
+        })
+        .catch(function (error) {
+          if (error.status == 401) {
+            swal({
+              title: "Error acceso " + error.response.status,
+              text: "Error, no tienes acceso a esta sección.",
+              icon: "error",
+              button: "Aceptar",
+              timer: "3000",
+            });
+          } else {
+            swal({
+              title: "Error interno " + error.response.status,
+              text: "Error interno, vuelve a intentarlo en unos momentos.",
+              icon: "error",
+              button: "Aceptar",
+              timer: "3000",
+            });
+          }
+        });
+      //if (usuarioLogeado.id_profesor) {
+      //} else {
+      //console.log("ALUMNO");
+      //columns.splice(5);
+      //}
+    }
+    //console.log(array1);
+    //console.log(array1);
+    //setDatos(array);
+  }, []);
+  // const data = [];
+  // for (let i = 1; i <= 10; i++) {
+  //   data.push({
+  //     key: i,
+  //     id: i,
+  //     enunciado: "HOLAAAA Enunciadoooooo",
+  //     profesor: "John Brown",
+  //     compuestoEnMuestra: `DAW`,
+  //     fechaInicio: "01/01/1111",
+  //     fechaFin: `01/01/1111`,
+  //   });
+  // }
+
   const [state, setState] = useState({
     bordered: false,
     loading: false,
