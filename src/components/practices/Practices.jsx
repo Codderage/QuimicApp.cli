@@ -204,60 +204,44 @@ import swal from "sweetalert";
 import carga from "../../assets/img/load/ajax-loader.gif";
 import Swal from "sweetalert2";
 
-import { CreateButton, TableWrapper } from "./Components.styled";
+import { CreateButton, TableWrapper } from "./Practices.styled";
 
 const columns = [
   {
-    title: "Nombre",
-    dataIndex: "nombreCompuesto",
-    // sorter: (a, b) => a.nombreCompuesto - b.nombreCompuesto,
+    title: "Profesor",
+    dataIndex: "profesor",
+    // sorter: (a, b) => a.profesor - b.profesor,
   },
   {
-    title: "Descripción",
-    dataIndex: "descripcion",
-    // sorter: (a, b) => a.descripcion - b.descripcion,
+    title: "Compuesto en muestra",
+    dataIndex: "compuestoEnMuestra",
+    // sorter: (a, b) => a.profesor - b.profesor,
   },
   {
-    title: "Fórmula",
-    dataIndex: "formula",
-    // sorter: (a, b) => a.formula - b.formula,
+    title: "Enunciado",
+    dataIndex: "enunciado",
+    // sorter: (a, b) => a.grupo - b.grupo,
   },
   {
-    title: "Tipo",
-    dataIndex: "tipo",
-    // sorter: (a, b) => a.tipo - b.tipo,
+    title: "Fecha inicio",
+    dataIndex: "fechaInicio",
+    // sorter: (a, b) => a.fechaInicio - b.fechaInicio,
   },
   {
-    title: "Estructura",
-    dataIndex: "estructura",
-    // sorter: (a, b) => a.estructura - b.estructura,
+    title: "Fecha fin",
+    dataIndex: "fechaFin",
+    // sorter: (a, b) => a.fechaFin - b.fechaFin,
   },
   {
     title: "",
     key: "accion",
-    dataIndex: "accion",
-    render: (text, record) => (
+    render: () => (
       <Space size="middle">
         <a title="Ver">
           <FontAwesomeIcon icon={faEye} className="view-icon" />
         </a>
         <a title="Editar">
-          <FontAwesomeIcon
-            icon={faEdit}
-            className="view-icon"
-            onClick={(e) => {
-              onUpdate(
-                record.key,
-                record.idCompuesto,
-                record.nombreCompuesto,
-                record.descripcion,
-                record.formula,
-                record.tipo,
-                record.estructura,
-                e
-              );
-            }}
-          />
+          <FontAwesomeIcon icon={faEdit} className="view-icon" />
         </a>
         <a title="Eliminar">
           <FontAwesomeIcon icon={faTimes} className="delete-icon" />
