@@ -22,26 +22,32 @@ const columns = [
     title: "Usuario",
     dataIndex: "nombreUsuario",
     //sorter: (a, b) => a.nombreUsuario - b.nombreUsuario,
+    sorter: (a, b) => a.nombreUsuario.length - b.nombreUsuario.length,
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Nombre",
     dataIndex: "nombre",
     //sorter: (a, b) => a.nombre - b.nombre,
+    responsive: ["md"],
   },
   {
     title: "Apellidos",
     dataIndex: "apellidos",
     //sorter: (a, b) => a.apellidos - b.apellidos,
+    responsive: ["md"],
   },
   {
     title: "Grupo",
     dataIndex: "grupo",
     //sorter: (a, b) => a.grupo - b.grupo,
+    responsive: ["md"],
   },
   {
     title: "Email",
     dataIndex: "email",
     //sorter: (a, b) => a.email - b.email,
+    responsive: ["md"],
   },
   {
     title: "Rol",
@@ -819,7 +825,7 @@ const Users = () => {
           dataSource={datos ? datos : null}
           scroll={scroll}
           className="users-table"
-          sticky
+          // sticky
         />
       </TableWrapper>
     </>

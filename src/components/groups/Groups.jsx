@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTimes, faEye } from "@fortawesome/free-solid-svg-icons";
 import { CreateButton, TableWrapper } from "./Groups.styled";
 
-import "./groups.css";
+// import "./groups.css";
 
 const columns = [
   {
@@ -21,11 +21,11 @@ const columns = [
     title: "Apellidos",
     dataIndex: "apellidos",
     //sorter: (a, b) => a.apellidos - b.apellidos,
+    responsive: ["md"],
   },
 
   {
     title: "Grupo",
-
     dataIndex: "grupo",
     //sorter: (a, b) => a.grupo - b.grupo,
   },
@@ -33,9 +33,13 @@ const columns = [
     title: "Email",
     dataIndex: "email",
     //sorter: (a, b) => a.email - b.email,
+    responsive: ["md"],
+  },
+  {
     title: "Profesor",
     dataIndex: "profesor",
-    sorter: (a, b) => a.profesor - b.profesor,
+    // sorter: (a, b) => a.profesor - b.profesor,
+    responsive: ["md"],
   },
   {
     title: "",
@@ -96,7 +100,7 @@ const Grupos = () => {
                     <>
                       {response.data[i].nombre}&nbsp;&nbsp;
                       <a
-                        className="btn"
+                        className="btn btn-primary"
                         onClick={(e) => {
                           onEdit(response.data[i].id, response.data[i].nombre);
                         }}
@@ -105,7 +109,7 @@ const Grupos = () => {
                       </a>
                       &nbsp;&nbsp;
                       <a
-                        className="btn"
+                        className="btn btn-danger"
                         onClick={(e) => {
                           onDelete(response.data[i].id);
                         }}

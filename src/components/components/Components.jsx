@@ -20,21 +20,25 @@ const columns = [
     title: "Descripción",
     dataIndex: "descripcion",
     // sorter: (a, b) => a.descripcion - b.descripcion,
+    responsive: ["md"],
   },
   {
     title: "Fórmula",
     dataIndex: "formula",
     // sorter: (a, b) => a.formula - b.formula,
+    responsive: ["md"],
   },
   {
     title: "Tipo",
     dataIndex: "tipo",
     // sorter: (a, b) => a.tipo - b.tipo,
+    responsive: ["md"],
   },
   {
     title: "Estructura",
     dataIndex: "estructura",
     // sorter: (a, b) => a.estructura - b.estructura,
+    responsive: ["md"],
   },
   {
     title: "",
