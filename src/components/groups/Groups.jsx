@@ -16,30 +16,60 @@ const columns = [
     title: "Nombre",
     dataIndex: "nombre",
     //sorter: (a, b) => a.nombre - b.nombre,
+    sorter: (a, b) => {
+      if (a.nombre < b.nombre) return 1;
+      if (b.nombre < a.nombre) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Apellidos",
     dataIndex: "apellidos",
     //sorter: (a, b) => a.apellidos - b.apellidos,
-    responsive: ["md"],
+    responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.apellidos < b.apellidos) return 1;
+      if (b.apellidos < a.apellidos) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
 
   {
     title: "Grupo",
     dataIndex: "grupo",
     //sorter: (a, b) => a.grupo - b.grupo,
+    sorter: (a, b) => {
+      if (a.grupo < b.grupo) return 1;
+      if (b.grupo < a.grupo) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Email",
     dataIndex: "email",
     //sorter: (a, b) => a.email - b.email,
-    responsive: ["md"],
+    responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.email < b.email) return 1;
+      if (b.email < a.email) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Profesor",
     dataIndex: "profesor",
     // sorter: (a, b) => a.profesor - b.profesor,
-    responsive: ["md"],
+    responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.profesor < b.profesor) return 1;
+      if (b.profesor < a.profesor) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "",

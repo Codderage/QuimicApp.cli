@@ -15,30 +15,42 @@ const columns = [
     title: "Nombre",
     dataIndex: "nombreCompuesto",
     // sorter: (a, b) => a.nombreCompuesto - b.nombreCompuesto,
+    sorter: (a, b) => {
+      if (a.nombreCompuesto < b.nombreCompuesto) return 1;
+      if (b.nombreCompuesto < a.nombreCompuesto) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Descripción",
     dataIndex: "descripcion",
     // sorter: (a, b) => a.descripcion - b.descripcion,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Fórmula",
     dataIndex: "formula",
     // sorter: (a, b) => a.formula - b.formula,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Tipo",
     dataIndex: "tipo",
     // sorter: (a, b) => a.tipo - b.tipo,
-    responsive: ["md"],
+    responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.tipo < b.tipo) return 1;
+      if (b.tipo < a.tipo) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Estructura",
     dataIndex: "estructura",
     // sorter: (a, b) => a.estructura - b.estructura,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "",
@@ -497,7 +509,7 @@ const Components = () => {
       <TableWrapper>
         <Table
           {...state}
-          pagination={{ position: [state.top, state.bottom] }}
+          pagination={{ position: [state.top, state.bottom], pageSize: 6 }}
           columns={tableColumns}
           dataSource={datos ? datos : null}
           scroll={scroll}

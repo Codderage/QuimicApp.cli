@@ -24,8 +24,8 @@ const columns = [
     //sorter: (a, b) => a.nombreUsuario - b.nombreUsuario,
     // sorter: (a, b) => a.nombreUsuario.length - b.nombreUsuario.length,
     sorter: (a, b) => {
-      if (a.nombreUsuario < b.nombreUsuario) return -1;
-      if (b.nombreUsuario < a.nombreUsuario) return 1;
+      if (a.nombreUsuario < b.nombreUsuario) return 1;
+      if (b.nombreUsuario < a.nombreUsuario) return -1;
       return 0;
     },
     sortDirections: ["descend", "ascend"],
@@ -35,36 +35,66 @@ const columns = [
     dataIndex: "nombre",
     //sorter: (a, b) => a.nombre - b.nombre,
     responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.nombre < b.nombre) return 1;
+      if (b.nombre < a.nombre) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Apellidos",
     dataIndex: "apellidos",
     //sorter: (a, b) => a.apellidos - b.apellidos,
     responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.apellidos < b.apellidos) return 1;
+      if (b.apellidos < a.apellidos) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Grupo",
     dataIndex: "grupo",
     //sorter: (a, b) => a.grupo - b.grupo,
     responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.grupo < b.grupo) return 1;
+      if (b.grupo < a.grupo) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Email",
     dataIndex: "email",
     //sorter: (a, b) => a.email - b.email,
     responsive: ["lg"],
+    sorter: (a, b) => {
+      if (a.email < b.email) return 1;
+      if (b.email < a.email) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "Rol",
     dataIndex: "rol",
     //sorter: (a, b) => a.rol - b.rol,
+    sorter: (a, b) => {
+      if (a.rol < b.rol) return 1;
+      if (b.rol < a.rol) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   {
     title: "",
     key: "accion",
     width: 300,
     dataIndex: "accion",
-    fixed: "right",
+    // fixed: "right",
     render: (text, record) => (
       <Space size="middle">
         <a

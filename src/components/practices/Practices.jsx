@@ -14,6 +14,12 @@ const columns = [
     title: "Profesor",
     dataIndex: "profesor",
     // sorter: (a, b) => a.profesor - b.profesor,
+    sorter: (a, b) => {
+      if (a.profesor < b.profesor) return 1;
+      if (b.profesor < a.profesor) return -1;
+      return 0;
+    },
+    sortDirections: ["descend", "ascend"],
   },
   // {
   //   title: "Compuesto en muestra",
@@ -29,11 +35,13 @@ const columns = [
     title: "Fecha inicio",
     dataIndex: "fechaInicio",
     // sorter: (a, b) => a.fechaInicio - b.fechaInicio,
+    sorter: (a, b) => new Date(a.date) - new Date(b.date),
   },
   {
     title: "Fecha fin",
     dataIndex: "fechaFin",
     // sorter: (a, b) => a.fechaFin - b.fechaFin,
+    sorter: (a, b) => new Date(a.date) - new Date(b.date),
   },
   {
     title: "",
@@ -457,7 +465,7 @@ const Practices = () => {
         {/* <CreateButton>+ Crear componente</CreateButton> */}
         <Table
           {...state}
-          pagination={{ position: [state.top, state.bottom] }}
+          pagination={{ position: [state.top, state.bottom], pageSize: 6 }}
           columns={tableColumns}
           dataSource={datos ? datos : null}
           scroll={scroll}
