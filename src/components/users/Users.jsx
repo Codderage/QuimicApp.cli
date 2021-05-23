@@ -22,32 +22,37 @@ const columns = [
     title: "Usuario",
     dataIndex: "nombreUsuario",
     //sorter: (a, b) => a.nombreUsuario - b.nombreUsuario,
-    sorter: (a, b) => a.nombreUsuario.length - b.nombreUsuario.length,
+    // sorter: (a, b) => a.nombreUsuario.length - b.nombreUsuario.length,
+    sorter: (a, b) => {
+      if (a.nombreUsuario < b.nombreUsuario) return -1;
+      if (b.nombreUsuario < a.nombreUsuario) return 1;
+      return 0;
+    },
     sortDirections: ["descend", "ascend"],
   },
   {
     title: "Nombre",
     dataIndex: "nombre",
     //sorter: (a, b) => a.nombre - b.nombre,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Apellidos",
     dataIndex: "apellidos",
     //sorter: (a, b) => a.apellidos - b.apellidos,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Grupo",
     dataIndex: "grupo",
     //sorter: (a, b) => a.grupo - b.grupo,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Email",
     dataIndex: "email",
     //sorter: (a, b) => a.email - b.email,
-    responsive: ["md"],
+    responsive: ["lg"],
   },
   {
     title: "Rol",
@@ -820,7 +825,7 @@ const Users = () => {
         {onCreateBut()}
         <Table
           {...state}
-          pagination={{ position: [state.top, state.bottom] }}
+          pagination={{ position: [state.top, state.bottom], pageSize: 6 }}
           columns={tableColumns}
           dataSource={datos ? datos : null}
           scroll={scroll}

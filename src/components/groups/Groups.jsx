@@ -467,7 +467,7 @@ const Grupos = () => {
         {/* <CreateButton>+ Crear grupo</CreateButton> */}
         <Table
           {...state}
-          pagination={{ position: [state.top, state.bottom] }}
+          pagination={{ position: [state.top, state.bottom], pageSize: 6 }}
           columns={tableColumns}
           dataSource={datos ? datos : null}
           scroll={scroll}
