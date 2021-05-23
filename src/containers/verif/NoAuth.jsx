@@ -11,7 +11,7 @@ const auth = () => {
       <SideNavBar />
       <section id="header" class="dark">
         <header>
-          <h1>⚠️ ERROR AL INTENTAR VERIFICAR ⚠️</h1>
+          <h1>❌ ERROR AL INTENTAR VERIFICAR ❌</h1>
           <p>
             Parece que ha habido algún problema al verificar tu usuario, en caso
             <br></br>de que el problema persista contacta con el administrador
