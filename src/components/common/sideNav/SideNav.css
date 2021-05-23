@@ -28,7 +28,7 @@
   fill: #6bb1c5;
 }
 
-.menu-times svg path:hover {
+.menu-times svg:hover path {
   fill: #fefcfb;
 }
 

@@ -45,6 +45,25 @@ for (let i = 1; i <= 10; i++) {
   });
 }
 
+const onCreateBut = () => {
+  const usuarioLogeado = JSON.parse(sessionStorage.getItem("user"));
+
+  if (usuarioLogeado) {
+    if (usuarioLogeado.id_profesor) {
+      return (
+        <CreateButton
+          className="btn"
+          // onClick={(e) => {
+          //   onCreate();
+          // }}
+        >
+          + Crear Grupo
+        </CreateButton>
+      );
+    }
+  }
+};
+
 const showHeader = true;
 
 const pagination = { position: "bottom" };
@@ -88,17 +107,19 @@ const Compounds = () => {
   }
 
   return (
-    <TableWrapper>
-      <CreateButton>+ Crear compuesto</CreateButton>
-      <Table
-        {...state}
-        pagination={{ position: [state.top, state.bottom] }}
-        columns={tableColumns}
-        dataSource={state.hasData ? data : null}
-        scroll={scroll}
-        className="compounds-table"
-      />
-    </TableWrapper>
+    <>
+      {onCreateBut()}
+      <TableWrapper>
+        <Table
+          {...state}
+          pagination={{ position: [state.top, state.bottom] }}
+          columns={tableColumns}
+          dataSource={state.hasData ? data : null}
+          scroll={scroll}
+          className="compounds-table"
+        />
+      </TableWrapper>
+    </>
   );
 };
 

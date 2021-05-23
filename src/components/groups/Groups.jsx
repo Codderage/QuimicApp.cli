@@ -35,12 +35,11 @@ const columns = [
     dataIndex: "profesor",
     sorter: (a, b) => a.profesor - b.profesor,
   },
-
   {
     title: "",
     key: "accion",
     dataIndex: "accion",
-    render: (text, record) => (
+    render: () => (
       <Space size="middle">
         <a title="Ver">
           <FontAwesomeIcon icon={faEye} className="view-icon" />
@@ -72,7 +71,6 @@ const Grupos = () => {
     if (sessionStorage.getItem("token") && sessionStorage.getItem("user")) {
       await axios
         .get("group-usuario")
-
         .then((response) => {
           //console.log(response.data);
           if (response.status >= 200 && response.status <= 205) {
@@ -95,23 +93,26 @@ const Grupos = () => {
                   nombre: (
                     <>
                       {response.data[i].nombre}&nbsp;&nbsp;
-                      <button
-                        className="btn btn-primary"
+                      <a
+                        className="btn"
                         onClick={(e) => {
                           onEdit(response.data[i].id, response.data[i].nombre);
                         }}
                       >
-                        Editar
-                      </button>
+                        <FontAwesomeIcon icon={faEdit} className="edit-icon" />
+                      </a>
                       &nbsp;&nbsp;
-                      <button
-                        className="btn btn-danger"
+                      <a
+                        className="btn"
                         onClick={(e) => {
                           onDelete(response.data[i].id);
                         }}
                       >
-                        Eliminar
-                      </button>
+                        <FontAwesomeIcon
+                          icon={faTimes}
+                          className="delete-icon"
+                        />
+                      </a>
                     </>
                   ),
                   apellidos: response.data[i].apellidos,

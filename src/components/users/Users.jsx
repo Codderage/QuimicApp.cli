@@ -579,7 +579,7 @@ const onUpdate = async (
     <label for='Eapellidos'>Apellidos:</label>
     <input class="swal2-input" id='Eapellidos' type='text' value='${apellidos}'>
     <label for='Eemail'>Email:</label>
-    <input class="swal2-input" id='Eemail' type='email' value='${email}'>
+    <input class="swal2-input" id='Eemail' type='email' value='${email}'><br/>
     ${grupos}
     `,
     // <input id='Eprofe' type='checkbox'>

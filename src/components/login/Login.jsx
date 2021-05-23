@@ -163,12 +163,12 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-        <div className="form-check mb-0">
+        {/* <div className="form-check mb-0">
           <RememberInput />
           <label className="form-check-label" htmlFor="loginRemember">
             Recuerdame
           </label>
-        </div>
+        </div> */}
         <SendButton className="btn btn-lg my-4" onClick={handleSubmit}>
           Entrar
         </SendButton>
