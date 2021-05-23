@@ -12,7 +12,13 @@ const PageNotFound = () => {
       <section id="header" class="dark">
         <header>
           <h1>❌ ERROR 404 ❌</h1>
-          <h3>Uy, llegaste a un mundo desconocido. Mejor regresa al inicio.</h3>
+          <br></br>
+          <br></br>
+          <br></br>
+          <h3>
+            Uy, llegaste a un mundo desconocido. <br></br>
+            Mejor regresa al inicio.
+          </h3>
         </header>
         <footer>
           <a href="/" class="button scrolly">
