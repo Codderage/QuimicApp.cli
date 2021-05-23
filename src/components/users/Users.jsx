@@ -53,6 +53,7 @@ const columns = [
     key: "accion",
     width: 300,
     dataIndex: "accion",
+    fixed: "right",
     render: (text, record) => (
       <Space size="middle">
         <a
@@ -792,10 +793,10 @@ const Users = () => {
 
   const scroll = {};
   if (state.yScroll) {
-    scroll.y = 240;
+    scroll.y = 250;
   }
   if (state.xScroll) {
-    scroll.x = "100vw";
+    scroll.x = 1500;
   }
 
   const tableColumns = columns.map((item) => ({
@@ -818,6 +819,7 @@ const Users = () => {
           dataSource={datos ? datos : null}
           scroll={scroll}
           className="users-table"
+          sticky
         />
       </TableWrapper>
     </>

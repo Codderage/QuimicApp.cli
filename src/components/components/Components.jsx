@@ -77,6 +77,25 @@ const columns = [
   },
 ];
 
+const onCreateBut = () => {
+  const usuarioLogeado = JSON.parse(sessionStorage.getItem("user"));
+
+  if (usuarioLogeado) {
+    if (usuarioLogeado.id_profesor) {
+      return (
+        <CreateButton
+          className="btn"
+          onClick={(e) => {
+            onCreate();
+          }}
+        >
+          + Crear componente
+        </CreateButton>
+      );
+    }
+  }
+};
+
 const onDelete = (id) => {
   swal({
     title: "¿Estás seguro?",
@@ -469,23 +488,19 @@ const Components = () => {
   }
 
   return (
-    <TableWrapper>
-      <CreateButton
-        onClick={(e) => {
-          onCreate();
-        }}
-      >
-        + Crear componente
-      </CreateButton>
-      <Table
-        {...state}
-        pagination={{ position: [state.top, state.bottom] }}
-        columns={tableColumns}
-        dataSource={datos ? datos : null}
-        scroll={scroll}
-        className="components-table"
-      />
-    </TableWrapper>
+    <>
+      {onCreateBut()}
+      <TableWrapper>
+        <Table
+          {...state}
+          pagination={{ position: [state.top, state.bottom] }}
+          columns={tableColumns}
+          dataSource={datos ? datos : null}
+          scroll={scroll}
+          className="components-table"
+        />
+      </TableWrapper>
+    </>
   );
 };
 

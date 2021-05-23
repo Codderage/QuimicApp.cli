@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTimes, faEye } from "@fortawesome/free-solid-svg-icons";
 import { CreateButton, TableWrapper } from "./Groups.styled";
 
+import "./groups.css";
+
 const columns = [
   {
     title: "Nombre",
