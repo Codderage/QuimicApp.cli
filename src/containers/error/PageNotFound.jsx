@@ -15,10 +15,10 @@ const PageNotFound = () => {
           <br></br>
           <br></br>
           <br></br>
-          <h3>
+          <h2>
             Uy, llegaste a un mundo desconocido. <br></br>
             Mejor regresa al inicio.
-          </h3>
+          </h2>
         </header>
         <footer>
           <a href="/" class="button scrolly">
