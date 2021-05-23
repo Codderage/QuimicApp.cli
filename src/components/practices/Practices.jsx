@@ -68,39 +68,38 @@ useEffect(async () => {
           //console.log(response.data[1].nombre);
           //console.log(response.data, response.data.length);
           for (let i = 0; i < response.data.length; i++) {
-
             data.push({
-                key: i,
-                id: response.data[i].id,
-                enunciado: response.data[i].enunciado,
-                profesor: response.data[i].profesor,
-                compuestoEnMuestra: response.data[i].compuestoEnMuestra,
-                fechaInicio: response.data[i].fechaInicio,
-                fechaFin: response.data[i].fechaFin,
-                grupo: response.data[i].nombre_grupo,
-                // accion: (
-                //   <>
-                //     {response.data[i].nombre}&nbsp;&nbsp;
-                //     <button
-                //       className="btn btn-primary"
-                //       onClick={(e) => {
-                //         onEdit(response.data[i].id);
-                //       }}
-                //     >
-                //       Editar
-                //     </button>
-                //     &nbsp;&nbsp;
-                //     <button
-                //       className="btn btn-danger"
-                //       onClick={(e) => {
-                //         onDelete(response.data[i].id);
-                //       }}
-                //     >
-                //       Eliminar
-                //     </button>
-                //   </>
-                // ),
-              });
+              key: i,
+              id: response.data[i].id,
+              enunciado: response.data[i].enunciado,
+              profesor: response.data[i].profesor,
+              compuestoEnMuestra: response.data[i].compuestoEnMuestra,
+              fechaInicio: response.data[i].fechaInicio,
+              fechaFin: response.data[i].fechaFin,
+              grupo: response.data[i].nombre_grupo,
+              // accion: (
+              //   <>
+              //     {response.data[i].nombre}&nbsp;&nbsp;
+              //     <button
+              //       className="btn btn-primary"
+              //       onClick={(e) => {
+              //         onEdit(response.data[i].id);
+              //       }}
+              //     >
+              //       Editar
+              //     </button>
+              //     &nbsp;&nbsp;
+              //     <button
+              //       className="btn btn-danger"
+              //       onClick={(e) => {
+              //         onDelete(response.data[i].id);
+              //       }}
+              //     >
+              //       Eliminar
+              //     </button>
+              //   </>
+              // ),
+            });
           }
           //console.log(array1);
 
@@ -136,30 +135,6 @@ useEffect(async () => {
   //console.log(array1);
   //setDatos(array);
 }, []);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // const data = [];
 // for (let i = 1; i <= 10; i++) {
 //   data.push({
@@ -214,29 +189,8 @@ const Practices = () => {
     tableColumns[0].fixed = true;
     tableColumns[tableColumns.length - 1].fixed = "right";
   }
-
-
+};
 export default Practices;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //==========================================================================================================
 //==========================================================================================================
 //==========================================================================================================
