@@ -14,11 +14,10 @@ const PageNotFound = () => {
           <h1>❌ ERROR 404 ❌</h1>
           <br></br>
           <br></br>
-          <br></br>
-          <h2>
+          <h3>
             Uy, llegaste a un mundo desconocido. <br></br>
             Mejor regresa al inicio.
-          </h2>
+          </h3>
         </header>
         <footer>
           <a href="/" class="button scrolly">
