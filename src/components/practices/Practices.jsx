@@ -65,7 +65,7 @@ const Practices = () => {
   useEffect(async () => {
     if (sessionStorage.getItem("token") && sessionStorage.getItem("user")) {
       await axios
-        .get("practicas")
+        .get("practicas1")
 
         .then((response) => {
           //console.log(response.data);
