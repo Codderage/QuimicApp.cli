@@ -64,30 +64,77 @@ const columns = [
           />
         </a>
         <a title="Eliminar">
-          <FontAwesomeIcon icon={faTimes} className="delete-icon" />
+          <FontAwesomeIcon
+            icon={faTimes}
+            className="delete-icon"
+            onClick={(e) => {
+              onDelete(record.id);
+            }}
+          />
         </a>
       </Space>
     ),
   },
 ];
 
-const onCreateBut = () => {
-  const usuarioLogeado = JSON.parse(sessionStorage.getItem("user"));
+const onDelete = (id) => {
+  swal({
+    title: "¿Estás seguro?",
+    text: "Eliminarás el compuesto y luego no podrás volver a recuperarlo.",
+    icon: "warning",
+    buttons: true,
+    dangerMode: true,
+  }).then((willDelete) => {
+    if (willDelete) {
+      //SI
+      //console.log(rol);
 
-  if (usuarioLogeado) {
-    if (usuarioLogeado.id_profesor) {
-      return (
-        <CreateButton
-          className="btn"
-          //onClick={(e) => {
-          //  onCreate();
-          //}}
-        >
-          + Crear Componente
-        </CreateButton>
-      );
+      swal({
+        //title: "Comprobando ...",
+        icon: carga,
+        button: false,
+        allowOutsideClick: false,
+      });
+      axios
+        .delete("compuesto-quimico/" + id)
+        .then((response) => {
+          //console.log(response.data);
+          if (response.status >= 200 && response.status <= 205) {
+            window.location.reload(true);
+            // swal({
+            //   title: "Practica eliminada",
+            //   text: "  ",
+            //   icon: "success",
+            //   button: false,
+            //   timer: "1800",
+            // });
+          }
+        })
+        .catch(function (error) {
+          //console.log("EEEEEEEEEEEEEEEE", error, "AAAAAAAAAAAAAAAAAAA");
+          if (error.status == 401) {
+            swal({
+              title: "Error acceso " + error.response.status,
+              text: "Error, no tienes acceso a esta sección.",
+              icon: "error",
+              button: "Aceptar",
+              timer: "3000",
+            });
+          } else {
+            //console.log(error.response.data["Error"]);
+            swal({
+              title: "Error " + error.response.status,
+              text: "Error interno",
+              icon: "error",
+              button: "Aceptar",
+              timer: "3000",
+            });
+          }
+        });
+    } else {
+      //swal("Grupo no eliminado");
     }
-  }
+  });
 };
 
 const onUpNull = (variable) => {
@@ -108,6 +155,11 @@ const onUpdate = async (
   estructura,
   e
 ) => {
+  nombreCompuesto = onUpNull(nombreCompuesto);
+  descripcion = onUpNull(descripcion);
+  formula = onUpNull(formula);
+  tipo = onUpNull(tipo);
+  estructura = onUpNull(estructura);
   //e.preventDefault();
   //const data = this.state.data.filter(item => item.key !== key);
   //this.setState({ data, isPageTween: false });
@@ -115,22 +167,17 @@ const onUpdate = async (
   //history.push("/editUsuario");
   // const grupos = await groups(rol, id_grupo, grupo);
   //console.log(grupos, "AAAAAAAAAAAAAAAAAAAAAA");
-  nombreCompuesto = onUpNull(nombreCompuesto);
-  descripcion = onUpNull(descripcion);
-  formula = onUpNull(formula);
-  tipo = onUpNull(tipo);
-  estructura = onUpNull(estructura);
   Swal.fire({
     title: "Editar",
-    html: `<label for='EnombreCompuesto'>Nombre:</label><br>
-    <input class="swal2-input" id='EnombreCompuesto' type='text' value='${nombreCompuesto}'><br>
-    <label for='Edescripcion'>Descripción:</label><br>
-    <input class="swal2-input" id='Edescripcion' type='text' value='${descripcion}'><br>
-    <label for='Eformula'>Fórmula:</label><br>
-    <input class="swal2-input" id='Eformula' type='text' value='${formula}'><br>
-    <label for='Etipo'>Tipo:</label><br>
-    <input class="swal2-input" id='Etipo' type='text' value='${tipo}'><br>
-    <label for='Eestructura'>Estructura:</label><br>
+    html: `<label for='EnombreCompuesto'>Nombre:</label>
+    <input class="swal2-input" id='EnombreCompuesto' type='text' value='${nombreCompuesto}'>
+    <label for='Edescripcion'>Descripción:</label>
+    <input class="swal2-input" id='Edescripcion' type='text' value='${descripcion}'>
+    <label for='Eformula'>Fórmula:</label>
+    <input class="swal2-input" id='Eformula' type='text' value='${formula}'>
+    <label for='Etipo'>Tipo:</label>
+    <input class="swal2-input" id='Etipo' type='text' value='${tipo}'>
+    <label for='Eestructura'>Estructura:</label>
     <input class="swal2-input" id='Eestructura' type='text' value='${estructura}'>`,
     // <input id='Eprofe' type='checkbox'>
     // <label class="swal2-input" for='Eprofe'>&nbsp;Es profesor</label><br>
@@ -152,7 +199,7 @@ const onUpdate = async (
       //alert(Egrupo);
       //const Eprofe = Swal.getPopup().querySelector("#Eprofe").checked;
       //const Eadmin = Swal.getPopup().querySelector("#Eadmin").checked;
-      if (!EnombreCompuesto || !Eformula) {
+      if (!EnombreCompuesto) {
         Swal.showValidationMessage(`Algún campo obligatorio vacío`);
       }
       return {
@@ -226,6 +273,92 @@ const onUpdate = async (
   });
 };
 
+const onCreate = async () => {
+  var peticion = [];
+
+  Swal.fire({
+    title: "Crear componente",
+    html: `
+    <label for='Enombre'>Nombre:</label><br>
+    <input class="swal2-input" id='Enombre' type='text' placeholder="Nombre"><br>
+    <label for='Eformula'>Formula:</label><br>
+    <input class="swal2-input" id='Eformula' type='text' placeholder="Formula"><br>
+    <label for='Edescripcion'>Descripcion:</label><br>
+    <input class="swal2-input" id='Edescripcion' type='text' placeholder="Descripcion"><br>
+    <label for='Etipo'>Tipo:</label><br>
+    <input class="swal2-input" id='Etipo' type='text' placeholder="Tipo"><br>
+    <label for='Eestructura'>Estructura:</label><br>
+    <input class="swal2-input" id='Eestructura' type='text' placeholder="Estructura"><br>
+    `,
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Crear",
+    cancelButtonText: "Cancelar",
+    focusConfirm: false,
+    preConfirm: () => {
+      const Enombre = Swal.getPopup().querySelector("#Enombre").value;
+      const Eformula = Swal.getPopup().querySelector("#Eformula").value;
+      const Edescripcion = Swal.getPopup().querySelector("#Edescripcion").value;
+      const Etipo = Swal.getPopup().querySelector("#Etipo").value;
+      const Eestructura = Swal.getPopup().querySelector("#Eestructura").value;
+      if (!Enombre) {
+        Swal.showValidationMessage(`Algún campo obligatorio vacío`);
+      }
+      return {
+        Enombre: Enombre,
+        Eformula: Eformula,
+        Edescripcion: Edescripcion,
+        Etipo: Etipo,
+        Eestructura: Eestructura,
+      };
+    },
+  }).then((result) => {
+    if (result.isConfirmed) {
+      peticion = {
+        nombre: `${result.value.Enombre}`,
+        formula: `${result.value.Eformula}`,
+        descripcion: `${result.value.Edescripcion}`,
+        tipo: `${result.value.Etipo}`,
+        estructura: `${result.value.Eestructura}`,
+      };
+      peticionCrear(peticion);
+    }
+  });
+};
+
+const peticionCrear = async (peticion) => {
+  await axios
+    .post("compuesto-quimico", peticion)
+    .then((response) => {
+      //console.log(response.data);
+      if (response.status >= 200 && response.status <= 205) {
+        //console.log(response.data[1].nombre);
+        //console.log(response.data);
+        window.location.reload(true);
+      }
+    })
+    .catch(function (error) {
+      if (error.status == 401) {
+        swal({
+          title: "Error acceso " + error.response.status,
+          text: "Error, no tienes acceso a esta sección.",
+          icon: "error",
+          button: "Aceptar",
+          timer: "3000",
+        });
+      } else {
+        swal({
+          title: "Error interno " + error.response.status,
+          text: "Error interno, vuelve a intentarlo en unos momentos.",
+          icon: "error",
+          button: "Aceptar",
+          timer: "3000",
+        });
+      }
+    });
+};
+
 const showHeader = true;
 
 const pagination = { position: "bottom" };
@@ -254,6 +387,7 @@ const Components = () => {
               //console.log(response.data[i]);
               array.push({
                 key: i,
+                id: response.data[i].id,
                 nombreCompuesto: response.data[i].nombre,
                 descripcion: response.data[i].descripcion,
                 formula: response.data[i].formula,
@@ -335,20 +469,23 @@ const Components = () => {
   }
 
   return (
-    <>
-      {onCreateBut()}
-      <TableWrapper>
-        {/* <CreateButton>+ Crear componente</CreateButton> */}
-        <Table
-          {...state}
-          pagination={{ position: [state.top, state.bottom] }}
-          columns={tableColumns}
-          dataSource={datos ? datos : null}
-          scroll={scroll}
-          className="components-table"
-        />
-      </TableWrapper>
-    </>
+    <TableWrapper>
+      <CreateButton
+        onClick={(e) => {
+          onCreate();
+        }}
+      >
+        + Crear componente
+      </CreateButton>
+      <Table
+        {...state}
+        pagination={{ position: [state.top, state.bottom] }}
+        columns={tableColumns}
+        dataSource={datos ? datos : null}
+        scroll={scroll}
+        className="components-table"
+      />
+    </TableWrapper>
   );
 };
 
