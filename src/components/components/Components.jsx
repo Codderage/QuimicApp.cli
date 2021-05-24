@@ -204,15 +204,15 @@ const onUpdate = async (
   //console.log(grupos, "AAAAAAAAAAAAAAAAAAAAAA");
   Swal.fire({
     title: "Editar",
-    html: `<label for='EnombreCompuesto'>Nombre:</label>
-    <input class="swal2-input" id='EnombreCompuesto' type='text' value='${nombreCompuesto}'>
-    <label for='Edescripcion'>Descripción:</label>
-    <input class="swal2-input" id='Edescripcion' type='text' value='${descripcion}'>
-    <label for='Eformula'>Fórmula:</label>
-    <input class="swal2-input" id='Eformula' type='text' value='${formula}'>
-    <label for='Etipo'>Tipo:</label>
-    <input class="swal2-input" id='Etipo' type='text' value='${tipo}'>
-    <label for='Eestructura'>Estructura:</label>
+    html: `<label for='EnombreCompuesto'>Nombre:</label><br/>
+    <input class="swal2-input" id='EnombreCompuesto' type='text' value='${nombreCompuesto}'><br/>
+    <label for='Edescripcion'>Descripción:</label><br/>
+    <input class="swal2-input" id='Edescripcion' type='text' value='${descripcion}'><br/>
+    <label for='Eformula'>Fórmula:</label><br/>
+    <input class="swal2-input" id='Eformula' type='text' value='${formula}'><br/>
+    <label for='Etipo'>Tipo:</label><br/>
+    <input class="swal2-input" id='Etipo' type='text' value='${tipo}'><br/>
+    <label for='Eestructura'>Estructura:</label><br/>
     <input class="swal2-input" id='Eestructura' type='text' value='${estructura}'>`,
     // <input id='Eprofe' type='checkbox'>
     // <label class="swal2-input" for='Eprofe'>&nbsp;Es profesor</label><br>
