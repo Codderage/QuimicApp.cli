@@ -64,121 +64,125 @@ const Practice = (props) => {
     <>
       <h1 className="p-5 text-center">Prueba práctica {id}</h1>
 
-      <div class="row">
-        <div className="col-8">
-          <TableCompound />
+      <div className="container">
+        <div class="row">
+          <div className="col-md-8">
+            <TableCompound />
+          </div>
+          <div className="col-md">
+            <TableData />
+          </div>
         </div>
-        <div className="col">
-          <TableData />
-        </div>
-      </div>
 
-      <div class="row">
-        <div class="col col-md-12">
-          <div>
-            <Scatter
-              id="aPdf"
-              height={400}
-              width={600}
-              data={{
-                datasets: [
-                  {
-                    data,
-                    borderColor: "black",
-                    borderWidth: 1,
-                    pointRadius: 0,
-                    pointHoverRadius: 0,
-                    fill: false,
-                    tension: 0.05,
-                    showLine: true,
-                  },
-                ],
-              }}
-              options={{
-                maintainAspectRatio: false,
-                responsive: true,
-                tooltips: {
-                  enabled: false,
-                },
-                plugins: {
-                  legend: false,
-                },
-                title: {
-                  display: true,
-                  text: "HPLC",
-                },
-                scales: {
-                  xAxes: [
+        <div class="row">
+          <div class="col col-md-12">
+            <div>
+              <Scatter
+                id="aPdf"
+                height={400}
+                width={600}
+                data={{
+                  datasets: [
                     {
-                      type: "time",
-                      time: {
-                        displayFormats: {
-                          second: "mm:ss",
+                      data,
+                      borderColor: "black",
+                      borderWidth: 1,
+                      pointRadius: 0,
+                      pointHoverRadius: 0,
+                      fill: false,
+                      tension: 0.05,
+                      showLine: true,
+                    },
+                  ],
+                }}
+                options={{
+                  maintainAspectRatio: false,
+                  responsive: true,
+                  tooltips: {
+                    enabled: false,
+                  },
+                  plugins: {
+                    legend: false,
+                  },
+                  title: {
+                    display: true,
+                    text: "HPLC",
+                  },
+                  scales: {
+                    xAxes: [
+                      {
+                        type: "time",
+                        time: {
+                          displayFormats: {
+                            second: "mm:ss",
+                          },
+                        },
+                        scaleLabel: {
+                          display: true,
+                          labelString: "Tiempo",
+                        },
+                        gridLines: {
+                          color: "#888",
+                          drawOnChartArea: false,
                         },
                       },
-                      scaleLabel: {
-                        display: true,
-                        labelString: "Tiempo",
+                    ],
+                    yAxes: [
+                      {
+                        gridLines: {
+                          color: "#888",
+                          drawOnChartArea: false,
+                        },
+                        scaleLabel: {
+                          display: true,
+                          labelString: "Altura",
+                        },
                       },
-                      gridLines: {
-                        color: "#888",
-                        drawOnChartArea: false,
-                      },
-                    },
-                  ],
-                  yAxes: [
-                    {
-                      gridLines: {
-                        color: "#888",
-                        drawOnChartArea: false,
-                      },
-                      scaleLabel: {
-                        display: true,
-                        labelString: "Altura",
-                      },
-                    },
-                  ],
-                },
-              }}
-            />
-          </div>
-          <div>
-            <button onClick={() => aPdf()}>Generar PDF</button>
-          </div>
-        </div>
-        <div className="container commentsWrapper">
-          <div className="row">
-            <div className="col">
-              <label htmlFor="comentarioProfesor">Comentario Profesor</label>
-              <br />
-              <textarea
-                name="comentarioProfesor"
-                id="comentarioProfesor"
-                cols="45"
-                rows="8"
-                className="tArea"
-                // readonly="true"
-              ></textarea>
-              <br />
-              <button type="button" class="btn btn-primary">
-                Guardar Comentario
+                    ],
+                  },
+                }}
+              />
+            </div>
+            <div>
+              <button disabled onClick={() => aPdf()}>
+                Generar PDF
               </button>
             </div>
-            <div className="col">
-              <label htmlFor="respuestaAlumno">Respuesta Alumno</label>
-              <br />
-              <textarea
-                name="respuestaAlumno"
-                id="respuestaAlumno"
-                cols="45"
-                rows="8"
-                className="tArea"
-                // readonly="true"
-              ></textarea>
-              <br />
-              <button type="button" class="btn btn-primary">
-                Guardar Respuesta
-              </button>
+          </div>
+          <div className="container commentsWrapper">
+            <div className="row">
+              <div className="col">
+                <label htmlFor="comentarioProfesor">Comentario Profesor</label>
+                <br />
+                <textarea
+                  name="comentarioProfesor"
+                  id="comentarioProfesor"
+                  cols="40"
+                  rows="8"
+                  className="tArea"
+                  // readonly="true"
+                ></textarea>
+                <br />
+                <button type="button" class="btn btn-primary">
+                  Guardar Comentario
+                </button>
+              </div>
+              <div className="col">
+                <label htmlFor="respuestaAlumno">Respuesta Alumno</label>
+                <br />
+                <textarea
+                  name="respuestaAlumno"
+                  id="respuestaAlumno"
+                  cols="40"
+                  rows="8"
+                  className="tArea"
+                  // readonly="true"
+                ></textarea>
+                <br />
+                <button type="button" class="btn btn-primary">
+                  Guardar Respuesta
+                </button>
+              </div>
             </div>
           </div>
         </div>

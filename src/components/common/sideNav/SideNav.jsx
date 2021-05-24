@@ -48,12 +48,19 @@ const SideNavBar = () => {
   };
 
   const logged = user ? (
-    <span className="navSpan">
-      Welcome {user.username} |{" "}
-      <Link onClick={logout} className="logged">
-        Logout
-      </Link>
-    </span>
+    <>
+      <span className="navSpan">
+        Welcome {user.username} |{" "}
+        <Link onClick={logout} className="logged">
+          Logout
+        </Link>
+      </span>
+      <span className="navSpanRes">
+        <Link onClick={logout} className="logged">
+          Logout
+        </Link>
+      </span>
+    </>
   ) : (
     <Link to="/login" className="logged">
       <FontAwesomeIcon icon={faUser} />

@@ -92,7 +92,7 @@ const columns = [
   {
     title: "",
     key: "accion",
-    width: 300,
+    // width: 300,
     dataIndex: "accion",
     // fixed: "right",
     render: (text, record) => (

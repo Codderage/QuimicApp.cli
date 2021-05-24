@@ -11,6 +11,7 @@ const columns = [
     title: "Picos",
     dataIndex: "picos",
     sorter: (a, b) => a.picos - b.picos,
+    responsive: ["lg"],
   },
   {
     title: "Compuestos",
@@ -21,6 +22,7 @@ const columns = [
     title: "Minutos",
     dataIndex: "minutos",
     sorter: (a, b) => a.minutos - b.minutos,
+    responsive: ["lg"],
   },
   {
     title: "Altura",
