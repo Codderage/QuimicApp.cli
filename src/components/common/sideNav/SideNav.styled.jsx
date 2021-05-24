@@ -3,12 +3,15 @@ import styled from "styled-components";
 export const Nav = styled.nav`
   height: 80px;
 
-  background-color: #1283a29f;
-  box-shadow: inset 0 1px 1px #0340789a, 0 0 8px #1283a29f;
+  background-color: rgb(29 161 199);
+  box-shadow: inset 0 1px 1px #0340789a, 0 0 8px rgb(29 161 199);
   font-family: "Cutive Mono", monospace;
   font-size: 18px;
   font-weight: 900;
   letter-spacing: 1px;
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 5 !important;
 
   & .menu-bars {
     margin-left: 1.8rem !important;

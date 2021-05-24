@@ -27,10 +27,9 @@ const SideNavBar = () => {
       });
       setUser(null);
       setToken(null);
-      //sessionStorage.clear();
-      // history.push("/login");
+      // sessionStorage.clear();
       setTimeout(() => {
-        window.location.href = "/login";
+        window.location.href = "/";
       }, 1800);
     } catch (e) {
       swal({

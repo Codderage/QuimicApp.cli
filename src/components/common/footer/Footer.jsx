@@ -9,7 +9,7 @@ const Footer = () => {
   // const [getState, setState] = useState();
 
   return (
-    <SFooter className="d-flex justify-content-center align-items-center fixed-bottom">
+    <SFooter className="d-flex justify-content-center align-items-center fixed-bottom p-0">
       <div id="social-wrapper">
         {/* <a href="#"> */}
         <FontAwesomeIcon icon={faFacebook} className="mx-4 my-3 social-icon" />
