@@ -59,36 +59,36 @@ const columns = [
     },
     sortDirections: ["descend", "ascend"],
   },
-  {
-    title: "Profesor",
-    dataIndex: "profesor",
-    // sorter: (a, b) => a.profesor - b.profesor,
-    responsive: ["lg"],
-    sorter: (a, b) => {
-      if (a.profesor < b.profesor) return 1;
-      if (b.profesor < a.profesor) return -1;
-      return 0;
-    },
-    sortDirections: ["descend", "ascend"],
-  },
-  {
-    title: "",
-    key: "accion",
-    dataIndex: "accion",
-    render: () => (
-      <Space size="middle">
-        <a title="Ver">
-          <FontAwesomeIcon icon={faEye} className="view-icon" />
-        </a>
-        <a title="Editar">
-          <FontAwesomeIcon icon={faEdit} className="view-icon" />
-        </a>
-        <a title="Eliminar">
-          <FontAwesomeIcon icon={faTimes} className="delete-icon" />
-        </a>
-      </Space>
-    ),
-  },
+  // {
+  //   title: "Profesor",
+  //   dataIndex: "profesor",
+  //   // sorter: (a, b) => a.profesor - b.profesor,
+  //   responsive: ["lg"],
+  //   sorter: (a, b) => {
+  //     if (a.profesor < b.profesor) return 1;
+  //     if (b.profesor < a.profesor) return -1;
+  //     return 0;
+  //   },
+  //   sortDirections: ["descend", "ascend"],
+  // },
+  // {
+  //   title: "",
+  //   key: "accion",
+  //   dataIndex: "accion",
+  //   render: () => (
+  //     <Space size="middle">
+  //       <a title="Ver">
+  //         <FontAwesomeIcon icon={faEye} className="view-icon" />
+  //       </a>
+  //       <a title="Editar">
+  //         <FontAwesomeIcon icon={faEdit} className="view-icon" />
+  //       </a>
+  //       <a title="Eliminar">
+  //         <FontAwesomeIcon icon={faTimes} className="delete-icon" />
+  //       </a>
+  //     </Space>
+  //   ),
+  // },
 ];
 
 // const data = [];
@@ -295,6 +295,8 @@ const Grupos = () => {
             + Crear Grupo
           </CreateButton>
         );
+      } else {
+        columns.splice(5);
       }
     }
   };
