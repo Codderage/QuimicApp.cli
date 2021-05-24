@@ -63,3 +63,7 @@ export const TableWrapper = styled.div`
     }
   }
 `;
+
+export const sH1 = styled.h1`
+   font-size= 2em !important;
+`;

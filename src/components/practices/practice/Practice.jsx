@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Scatter } from "react-chartjs-2";
 import html2canvas from "html2canvas";
 import jspdf from "jspdf";
+import "./practice.css";
 
 import TableCompound from "./TableCompound";
 import TableData from "./TableData";
@@ -37,29 +38,37 @@ const aPdf = () => {
 
   html2canvas(grafico).then((canvas) => {
     const img = canvas.toDataURL("image/png");
-    const pdf = new jspdf("l", "px", "a4");
+    const pdf = new jspdf("l", "px");
     pdf.addImage(
       img,
-      "png",
+      "PNG",
       50, //x
       25, // y
       grafico.clientWidth / 2, // width
-      grafico.clientHeight / 2, // height
-      "",
-      "NONE"
+      grafico.clientHeight / 2 // height
+      // "",
+      // "NONE"
     );
     pdf.save("practica.pdf");
   });
 };
 
-const Practice = () => {
+const Practice = (props) => {
   const [state, setState] = useState(false);
+
+  const id = props.id;
+
   return (
     <>
-      <h1 className="p-5 text-center">Prueba práctica</h1>
+      <h1 className="p-5 text-center">Prueba práctica {id}</h1>
 
       <div class="row">
-        <div class="col col-md-6">
+        <TableCompound />
+        <TableData />
+      </div>
+
+      <div class="row">
+        <div class="col col-md-12">
           <div>
             <Scatter
               id="aPdf"
@@ -128,34 +137,47 @@ const Practice = () => {
             />
           </div>
           <div>
-            <button onClick={() => aPdf()}>Generar PDF</button>
+            <button disabled onClick={() => aPdf()}>
+              Generar PDF
+            </button>
           </div>
         </div>
-        <div className="col-md-6 commentsWrapper">
+        <div className="container commentsWrapper">
           <div className="row">
-            <label htmlFor="respuestaAlumno">Respuesta Alumno</label>
-            <textarea
-              name="respuestaAlumno"
-              id="respuestaAlumno"
-              cols="30"
-              rows="8"
-              readonly
-            ></textarea>
-            <label htmlFor="comentarioProfesor">Comentario Profesor</label>
-            <textarea
-              name="comentarioProfesor"
-              id="comentarioProfesor"
-              cols="30"
-              rows="8"
-              readonly
-            ></textarea>
+            <div className="col">
+              <label htmlFor="comentarioProfesor">Comentario Profesor</label>
+              <br />
+              <textarea
+                name="comentarioProfesor"
+                id="comentarioProfesor"
+                cols="40"
+                rows="8"
+                className="tArea"
+                // readonly="true"
+              ></textarea>
+              <br />
+              <button type="button" class="btn btn-primary">
+                Guardar Comentario
+              </button>
+            </div>
+            <div className="col">
+              <label htmlFor="respuestaAlumno">Respuesta Alumno</label>
+              <br />
+              <textarea
+                name="respuestaAlumno"
+                id="respuestaAlumno"
+                cols="40"
+                rows="8"
+                className="tArea"
+                // readonly="true"
+              ></textarea>
+              <br />
+              <button type="button" class="btn btn-primary">
+                Guardar Respuesta
+              </button>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div class="row">
-        <TableCompound />
-        <TableData />
       </div>
     </>
   );

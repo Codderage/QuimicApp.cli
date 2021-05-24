@@ -91,23 +91,19 @@ const App = () => {
               <Route path="/grupos">
                 <GroupsLanding />
               </Route>
-
               <Route path="/auth">
                 <Auth />
               </Route>
-
               <Route path="/noauth">
                 <NoAuth />
               </Route>
-
               <Route path="/verificar-pw">
                 <VerAuth />
               </Route>
-
               <Route path="/practicas" exact>
                 <PracticesLanding />
               </Route>
-              <Route path="/practicas/practica" exact>
+              <Route path="/practicas/practica/:id" exact>
                 <PracticePage />
               </Route>
               <Route path="/compuestos" exact>
@@ -119,10 +115,6 @@ const App = () => {
               <Route>
                 <PageNotFound />
               </Route>
-
-              {/* <Route>
-                <PageNotFound />
-              </Route> */}
             </Switch>
           </Router>
         </Suspense>

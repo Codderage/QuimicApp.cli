@@ -32,6 +32,10 @@
   fill: #fefcfb !important;
 }
 
+.menu-bars svg:hover path {
+  fill: #fefcfb !important;
+}
+
 .nav-menu {
   background-color: #0a1128;
   width: 80px;

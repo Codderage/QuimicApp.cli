@@ -58,9 +58,9 @@ const columns = [
     dataIndex: "accion",
     render: (text, record) => (
       <Space size="middle">
-        <a title="Ver">
+        {/* <a title="Ver">
           <FontAwesomeIcon icon={faEye} className="view-icon" />
-        </a>
+        </a> */}
         <a title="Editar">
           <FontAwesomeIcon
             icon={faEdit}

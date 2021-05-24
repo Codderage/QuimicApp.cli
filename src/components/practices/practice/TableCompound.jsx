@@ -13,8 +13,8 @@ const columns = [
     sorter: (a, b) => a.picos - b.picos,
   },
   {
-    title: "Substancias",
-    dataIndex: "substancias",
+    title: "Compuestos",
+    dataIndex: "compuestos",
     sorter: (a, b) => a.substancias - b.substancias,
   },
   {
@@ -27,24 +27,38 @@ const columns = [
     dataIndex: "altura",
     sorter: (a, b) => a.altura - b.altura,
   },
+  {
+    title: "Inicio",
+    dataIndex: "inicio",
+    sorter: (a, b) => a.inicio - b.inicio,
+  },
+  {
+    title: "Fin",
+    dataIndex: "fin",
+    sorter: (a, b) => a.fin - b.fin,
+  },
 ];
 
-const data = [];
-for (let i = 1; i <= 6; i++) {
-  data.push({
-    key: i,
-    picos: i,
-    substancias: "Naphtalene",
-    minutos: 3.3,
-    altura: 125,
-  });
-}
+// const data = [];
+// for (let i = 1; i <= 6; i++) {
+//   data.push({
+//     key: i,
+//     picos: i,
+//     substancias: "Naphtalene",
+//     minutos: 3.3,
+//     altura: 125,
+//   });
+// }
 
 const showHeader = true;
 
 const pagination = { position: "bottom" };
 
 const CompoundTable = () => {
+  const [datos, setDatos] = useState(null);
+
+  const array = [];
+
   const [state, setState] = useState({
     bordered: false,
     loading: false,

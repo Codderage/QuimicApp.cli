@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link, Redirect } from "react-router-dom";
 import axios from "../common/http";
 import { Table, Space } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -48,9 +49,9 @@ const columns = [
     key: "accion",
     render: (text, record) => (
       <Space size="middle">
-        <a title="Ver">
+        <Link title="Ver" to={{ pathname: `/practicas/practica/${record.id}` }}>
           <FontAwesomeIcon icon={faEye} className="view-icon" />
-        </a>
+        </Link>
         <a title="Editar">
           <FontAwesomeIcon
             icon={faEdit}
@@ -110,9 +111,9 @@ const onCreate = async (id) => {
     <label for='Eenunciado'>Enunciado:</label><br>
     <input class="swal2-input" id='Eenunciado' type='text' placeholder="Enunciado"><br>
     <label for='EfechaInicio'>Fecha inicio:</label><br>
-    <input class="swal2-input" id='EfechaInicio' type='text' placeholder="2021-05-01"><br>
+    <input class="swal2-input" id='EfechaInicio' type='date' placeholder="2021-05-01"><br>
     <label for='EfechaFin'>Fecha fin:</label><br>
-    <input class="swal2-input" id='EfechaFin' type='text' placeholder="2021-05-01"><br>
+    <input class="swal2-input" id='EfechaFin' type='date' placeholder="2021-05-01"><br>
     `,
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
@@ -272,9 +273,9 @@ const onUpdate = async (
     html: `<label for='Eenunciado'>Enunciado:</label><br>
     <input class="swal2-input" id='Eenunciado' type='text' value='${enunciado}'><br>
     <label for='EfechaInicio'>Fecha inicio:</label><br>
-    <input class="swal2-input" id='EfechaInicio' type='text' value='${fechaInicio}' placeholder="2021-05-01"><br>
+    <input class="swal2-input" id='EfechaInicio' type='date' value='${fechaInicio}' placeholder="2021-05-01"><br>
     <label for='EfechaFin'>Fecha fin:</label><br>
-    <input class="swal2-input" id='EfechaFin' type='text' value='${fechaFin}' placeholder="2021-05-01"><br>`,
+    <input class="swal2-input" id='EfechaFin' type='date' value='${fechaFin}' placeholder="2021-05-01"><br>`,
 
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
