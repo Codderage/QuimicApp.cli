@@ -261,33 +261,6 @@ const HomePage = () => {
                   persona que se esfuerza en sacar lo mejor de si misma y de los
                   demás. Soy una persona muy lógica y con iniciativa.
                 </p>
-                <ul class="icons">
-                  <li>
-                    <a href="#" class="icon brands fa-twitter">
-                      <span class="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-facebook-f">
-                      <span class="label">Facebook</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-instagram">
-                      <span class="label">Instagram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-dribbble">
-                      <span class="label">Dribbble</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-github">
-                      <span class="label">GitHub</span>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <div class="col-4 col-12-narrow">
                 <h2>Toni Soria</h2>
@@ -299,33 +272,6 @@ const HomePage = () => {
                   diferenciación y, por tanto, en la raíz de la ventaja
                   competitiva
                 </p>
-                <ul class="icons">
-                  <li>
-                    <a href="#" class="icon brands fa-twitter">
-                      <span class="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-facebook-f">
-                      <span class="label">Facebook</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-instagram">
-                      <span class="label">Instagram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-dribbble">
-                      <span class="label">Dribbble</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-github">
-                      <span class="label">GitHub</span>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <div class="col-4 col-12-narrow">
                 <h2>Sherab Pereira</h2>
@@ -335,33 +281,6 @@ const HomePage = () => {
                   oportunidades donde otros ven nada: convierto ideas en
                   proyectos, y los proyectos en éxito
                 </p>
-                <ul class="icons">
-                  <li>
-                    <a href="#" class="icon brands fa-twitter">
-                      <span class="label">Twitter</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-facebook-f">
-                      <span class="label">Facebook</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-instagram">
-                      <span class="label">Instagram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-dribbble">
-                      <span class="label">Dribbble</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="icon brands fa-github">
-                      <span class="label">GitHub</span>
-                    </a>
-                  </li>
-                </ul>
               </div>
             </div>
           </div>
