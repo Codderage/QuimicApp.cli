@@ -39,7 +39,7 @@ const Practices = () => {
       layout="horizontal"
       column={1}
       bordered={true}
-      className="col-6"
+      className="col"
     >
       <Descriptions.Item label="Nombre columna">
         {datos ? datos[0].nombre : ""}

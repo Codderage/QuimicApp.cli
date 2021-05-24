@@ -9,13 +9,13 @@ import TableData from "./TableData";
 
 //Modelo de objeto JSON 'columnas' obtenido de API
 const columnas = [
-  { inicio: { x: 20, y: 0 }, peak: { x: 21, y: 130 }, fin: { x: 22, y: 0 } },
-  { inicio: { x: 29, y: 0 }, peak: { x: 31, y: 215 }, fin: { x: 33, y: 0 } },
-  { inicio: { x: 80, y: 0 }, peak: { x: 85, y: 110 }, fin: { x: 90, y: 0 } },
+  { inicio: { x: 71, y: 0 }, peak: { x: 74, y: 56 }, fin: { x: 76, y: 0 } },
+  { inicio: { x: 129, y: 0 }, peak: { x: 131, y: 33 }, fin: { x: 133, y: 0 } },
+  { inicio: { x: 145, y: 0 }, peak: { x: 149, y: 43 }, fin: { x: 154, y: 0 } },
 ];
 
 //tiempo medido en segundos
-const tiempoProcesamientoColumna = 150;
+const tiempoProcesamientoColumna = 160;
 const inicioChart = { x: 0, y: 0 };
 const finChart = { x: tiempoProcesamientoColumna * 1000, y: 0 };
 
@@ -63,8 +63,12 @@ const Practice = (props) => {
       <h1 className="p-5 text-center">Prueba práctica {id}</h1>
 
       <div class="row">
-        <TableCompound />
-        <TableData />
+        <div className="col-8">
+          <TableCompound />
+        </div>
+        <div className="col">
+          <TableData />
+        </div>
       </div>
 
       <div class="row">
@@ -150,7 +154,7 @@ const Practice = (props) => {
               <textarea
                 name="comentarioProfesor"
                 id="comentarioProfesor"
-                cols="40"
+                cols="45"
                 rows="8"
                 className="tArea"
                 // readonly="true"
@@ -166,7 +170,7 @@ const Practice = (props) => {
               <textarea
                 name="respuestaAlumno"
                 id="respuestaAlumno"
-                cols="40"
+                cols="45"
                 rows="8"
                 className="tArea"
                 // readonly="true"

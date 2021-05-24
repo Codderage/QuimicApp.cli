@@ -15,7 +15,7 @@ const columns = [
   {
     title: "Compuestos",
     dataIndex: "compuestos",
-    sorter: (a, b) => a.substancias - b.substancias,
+    sorter: (a, b) => a.compuestos - b.compuestos,
   },
   {
     title: "Minutos",
@@ -39,16 +39,34 @@ const columns = [
   },
 ];
 
-// const data = [];
-// for (let i = 1; i <= 6; i++) {
-//   data.push({
-//     key: i,
-//     picos: i,
-//     substancias: "Naphtalene",
-//     minutos: 3.3,
-//     altura: 125,
-//   });
-// }
+const data = [];
+data.push({
+  key: 1,
+  picos: 1,
+  compuestos: "Cortisol",
+  minutos: 0.74,
+  altura: 56,
+  inicio: 0.71,
+  fin: 0.76,
+});
+data.push({
+  key: 2,
+  picos: 2,
+  compuestos: "Corticosterone",
+  minutos: 1.31,
+  altura: 33,
+  inicio: 1.29,
+  fin: 1.33,
+});
+data.push({
+  key: 3,
+  picos: 3,
+  compuestos: "Estradiol",
+  minutos: 1.49,
+  altura: 43,
+  inicio: 1.45,
+  fin: 1.54,
+});
 
 const showHeader = true;
 
@@ -97,7 +115,7 @@ const CompoundTable = () => {
   }
 
   return (
-    <TableWrapper className="col-6">
+    <TableWrapper className="col">
       <Table
         {...state}
         pagination={{ position: [state.top, state.bottom] }}
