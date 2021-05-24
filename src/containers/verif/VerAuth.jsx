@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 // import styled from "styled-components";
 // import { User } from "../../../App";
+import { history } from "react-router-dom";
 import SideNavBar from "../../components/common/sideNav/SideNav";
 import Swal from "sweetalert2";
 import axios from "../../components/common/http";
@@ -89,17 +90,21 @@ const verpw = () => {
         allowOutsideClick: false,
       });
       await axios
-        .put(`usr/co-pw/${VerAut}`, val)
+        .put(`usr/co-pw/${VerAut}`, "password=" + val)
         .then((response) => {
           //console.log(response.data);
           if (response.status >= 200 && response.status <= 205) {
             //console.log(response.data[1].nombre);
             //console.log(response.data);
             //window.location.reload(true);
+            console.log(val);
             swal({
               title: "Contraseña cambiada correctamente",
             });
-            window.location.href = "/";
+            setTimeout(() => {
+              window.location.href = "/";
+            }, 1800);
+            // history.push("/");
           }
         })
         .catch(function (error) {
