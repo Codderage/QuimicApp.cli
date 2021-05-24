@@ -15,7 +15,7 @@ const columnas = [
 ];
 
 //tiempo medido en segundos
-const tiempoProcesamientoColumna = 160;
+const tiempoProcesamientoColumna = 250;
 const inicioChart = { x: 0, y: 0 };
 const finChart = { x: tiempoProcesamientoColumna * 1000, y: 0 };
 
@@ -42,10 +42,12 @@ const aPdf = () => {
     pdf.addImage(
       img,
       "PNG",
-      50, //x
-      25, // y
-      grafico.clientWidth / 2, // width
-      grafico.clientHeight / 2 // height
+      0, //x
+      0, // y
+      // grafico.clientWidth / 2, // width
+      // grafico.clientHeight / 2 // height
+      200,
+      200
       // "",
       // "NONE"
     );
@@ -87,7 +89,7 @@ const Practice = (props) => {
                     pointRadius: 0,
                     pointHoverRadius: 0,
                     fill: false,
-                    tension: 0.02,
+                    tension: 0.05,
                     showLine: true,
                   },
                 ],
@@ -141,9 +143,7 @@ const Practice = (props) => {
             />
           </div>
           <div>
-            <button disabled onClick={() => aPdf()}>
-              Generar PDF
-            </button>
+            <button onClick={() => aPdf()}>Generar PDF</button>
           </div>
         </div>
         <div className="container commentsWrapper">
